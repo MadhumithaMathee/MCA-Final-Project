@@ -11,6 +11,7 @@ import ClassOutlinedIcon from '@mui/icons-material/ClassOutlined';
 import SupervisorAccountOutlinedIcon from '@mui/icons-material/SupervisorAccountOutlined';
 import ReportIcon from '@mui/icons-material/Report';
 import AssignmentIcon from '@mui/icons-material/Assignment';
+import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 
 const SideBar = () => {
     const location = useLocation();
@@ -47,6 +48,15 @@ const SideBar = () => {
                     </ListItemIcon>
                     <ListItemText primary="Students" />
                 </ListItemButton>
+
+                <ListItemButton component={Link} to="/Admin/students/payments">
+                    <ListItemIcon>
+                        <CurrencyRupeeIcon  color={location.pathname.startsWith("/Admin/students/payments") ? 'primary' : 'inherit'} />
+                    </ListItemIcon>
+                    <ListItemText primary="Fees Collections" />
+                </ListItemButton>
+
+
                 <ListItemButton component={Link} to="/Admin/notices">
                     <ListItemIcon>
                         <AnnouncementOutlinedIcon color={location.pathname.startsWith("/Admin/notices") ? 'primary' : 'inherit'} />

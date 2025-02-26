@@ -5,6 +5,7 @@ const dotenv = require("dotenv")
 // const bodyParser = require("body-parser")
 const app = express()
 const Routes = require("./routes/route.js")
+const FeesPayment=require("./routes/paymentRoutes.js")
 
 const PORT = process.env.PORT || 5000
 
@@ -25,6 +26,8 @@ mongoose
     .catch((err) => console.log("NOT CONNECTED TO NETWORK", err))
 
 app.use('/', Routes);
+
+app.use("/fees",FeesPayment)
 
 app.listen(PORT, () => {
     console.log(`Server started at port no. ${PORT}`)

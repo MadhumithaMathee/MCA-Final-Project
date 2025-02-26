@@ -251,7 +251,13 @@ const ShowStudents = () => {
                             <SpeedDialTemplate actions={actions} />
                             <>
                             
-                            <button onClick={sendEmail} >📧 Send Warning Emails</button>
+
+                            <div style={{display:"flex",alignItems:"center",justifyContent:"center"}}>
+                            <Button onClick={sendEmail} sx={{backgroundColor:"blue" ,color:"black",fontWeight:"bold"}} >📧 Send Warning Emails</Button>
+
+                            </div>
+
+                            <br/>
 
                             </>
                         </Paper>

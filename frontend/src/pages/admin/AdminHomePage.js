@@ -7,10 +7,11 @@ import Fees from "../../assets/img4.png";
 import styled from 'styled-components';
 import CountUp from 'react-countup';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { getAllSclasses } from '../../redux/sclassRelated/sclassHandle';
 import { getAllStudents } from '../../redux/studentRelated/studentHandle';
 import { getAllTeachers } from '../../redux/teacherRelated/teacherHandle';
+import axios from 'axios';
 
 const AdminHomePage = () => {
     const dispatch = useDispatch();
@@ -22,10 +23,28 @@ const AdminHomePage = () => {
 
     const adminID = currentUser._id
 
+    const [totalAmount, settotalAmount] = useState({
+        totalAmount: 244
+    })
+
     useEffect(() => {
         dispatch(getAllStudents(adminID));
         dispatch(getAllSclasses(adminID, "Sclass"));
         dispatch(getAllTeachers(adminID));
+
+
+
+        const gettotalAmount = async () => {
+            // http://localhost:5000/fees//totalAmt/amt
+            const { data } = await axios.get("http://localhost:5000/fees//totalAmt/amt")
+            settotalAmount(data)
+            console.log(data);
+            
+        }
+
+        gettotalAmount()
+
+
     }, [adminID, dispatch]);
 
     const numberOfStudents = studentsList && studentsList.length;
@@ -69,7 +88,7 @@ const AdminHomePage = () => {
                             <Title>
                                 Fees Collection
                             </Title>
-                            <Data start={0} end={23000} duration={2.5} prefix="$" />                        </StyledPaper>
+                            <Data start={0} end={totalAmount.totalAmount} duration={2.5} prefix="₹" />                        </StyledPaper>
                     </Grid>
                     <Grid item xs={12} md={12} lg={12}>
                         <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>

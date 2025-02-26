@@ -38,6 +38,20 @@ const StudentSideBar = () => {
                     </ListItemIcon>
                     <ListItemText primary="Complain" />
                 </ListItemButton>
+                <ListItemButton component={Link} to="/Student/feespay">
+                    <ListItemIcon>
+                        <ClassOutlinedIcon color={location.pathname.startsWith("/Student/feespay") ? 'primary' : 'inherit'} />
+                    </ListItemIcon>
+                    <ListItemText primary="Feespay" />
+                </ListItemButton>
+
+                <ListItemButton component={Link} to="/Student/fees/history">
+                    <ListItemIcon>
+                        <ClassOutlinedIcon color={location.pathname.startsWith("/Student/fees/history") ? 'primary' : 'inherit'} />
+                    </ListItemIcon>
+                    <ListItemText primary="Payments History" />
+                </ListItemButton>
+
             </React.Fragment>
             <Divider sx={{ my: 1 }} />
             <React.Fragment>
@@ -56,7 +70,12 @@ const StudentSideBar = () => {
                     </ListItemIcon>
                     <ListItemText primary="Logout" />
                 </ListItemButton>
+
+
+
+
             </React.Fragment>
+            {/* PaymentDetails */}
         </>
     )
 }
