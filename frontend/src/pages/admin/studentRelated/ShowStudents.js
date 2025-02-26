@@ -196,21 +196,24 @@ const ShowStudents = () => {
     const sendEmail=()=>{
 
 
-        emailjs.init("he13C_WkuPziXSgBt"); 
+        emailjs.init("Sv2gnNfjo5n4koW8D"); 
 
-
+        
        absentstudent.map(stu=>{ 
-         let email_status =  emailjs.send("service_1jj79am","template_u10bl8v",{
+         let email_status =  emailjs.send("service_yelpv48","template_vj9y6q6",{
                to_name: stu.name,
                message: "Your absence has been noted. Please ensure timely attendance.",
                to_email: stu.email,
                });
 
                email_status.then(res=>{
+                console.log(res);
+                
                 if (res.status==200) {
                     setMessage("Done Successfully")
                     setShowPopup(true)
                 }
+
                })
                
        })

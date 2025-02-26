@@ -65,7 +65,7 @@ const ChooseUser = ({ visitor }) => {
   }
 
   useEffect(() => {
-    if (status === 'success' || currentUser !== null) {
+    if (status === 'success' || currentUser !== null  || status==="failed") {
       if (currentRole === 'Admin') {
         navigate('/Admin/dashboard');
       }
@@ -75,12 +75,15 @@ const ChooseUser = ({ visitor }) => {
         navigate('/Teacher/dashboard');
       }
     }
-    else if (status === 'error') {
+    else if (status === 'error' ) {
       setLoader(false)
       setMessage("Network Error")
       setShowPopup(true)
     }
   }, [status, currentRole, navigate, currentUser]);
+
+  console.log(status);
+  
 
   return (
     <StyledContainer>

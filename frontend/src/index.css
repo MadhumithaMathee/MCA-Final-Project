@@ -13,8 +13,8 @@ a {
 }
 
 :root {
-  --color-bg: #1f1f38;
-  --color-bg-variant: #2c2c6c;
+  --color-bg: #1485e8;
+  --color-bg-variant: #9494f5a4;
   --color-primary: #4db5ff;
   --color-primary-variant: rgba(77, 181, 255, 0.4);
   --color-light: rgba(255, 255, 255, 0.6);
@@ -33,6 +33,7 @@ a {
   background-size: cover;
   background-blend-mode: darken; */
   font-family: "Josefin Sans", sans-serif;
+  background-color: var(--color-bg);
 }
 
 .registerTitle {
