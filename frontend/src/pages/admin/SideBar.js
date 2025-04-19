@@ -3,7 +3,6 @@ import { Divider, ListItemButton, ListItemIcon, ListItemText, ListSubheader } fr
 import { Link, useLocation } from 'react-router-dom';
 
 import HomeIcon from "@mui/icons-material/Home";
-import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import AnnouncementOutlinedIcon from '@mui/icons-material/AnnouncementOutlined';
@@ -12,6 +11,8 @@ import SupervisorAccountOutlinedIcon from '@mui/icons-material/SupervisorAccount
 import ReportIcon from '@mui/icons-material/Report';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
+import { PiStudentBold } from "react-icons/pi";
+import { SiChatbot } from "react-icons/si";
 
 const SideBar = () => {
     const location = useLocation();
@@ -44,7 +45,7 @@ const SideBar = () => {
                 </ListItemButton>
                 <ListItemButton component={Link} to="/Admin/students">
                     <ListItemIcon>
-                        <PersonOutlineIcon color={location.pathname.startsWith("/Admin/students") ? 'primary' : 'inherit'} />
+                        <PiStudentBold color={location.pathname.startsWith("/Admin/students") ? 'primary' : 'inherit'} />
                     </ListItemIcon>
                     <ListItemText primary="Students" />
                 </ListItemButton>
@@ -55,6 +56,13 @@ const SideBar = () => {
                     </ListItemIcon>
                     <ListItemText primary="Fees Collections" />
                 </ListItemButton>
+
+                <ListItemButton component={Link} to="/Chatbot">
+                    <ListItemIcon>
+                        <SiChatbot color={location.pathname.startsWith('/Chatbot') ? 'primary' : 'inherit'} />
+                    </ListItemIcon>
+                    <ListItemText primary="Chatbot" />
+                </ListItemButton>    
 
 
                 <ListItemButton component={Link} to="/Admin/notices">

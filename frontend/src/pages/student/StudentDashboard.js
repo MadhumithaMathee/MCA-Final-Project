@@ -22,7 +22,7 @@ import AccountMenu from '../../components/AccountMenu';
 import { AppBar, Drawer } from '../../components/styles';
 import FeePayment from './studentFeesPayment';
 import PaymentDetails from './StudentfeesDetails';
-
+import Chatbot from '../../components/chatbot/chat';
 const StudentDashboard = () => {
     const [open, setOpen] = useState(true);
     const toggleDrawer = () => {
@@ -83,7 +83,7 @@ const StudentDashboard = () => {
                         <Route path="/Student/complain" element={<StudentComplain />} />
                         <Route path="/Student/feespay" element={<FeePayment />} />
                         <Route path="/Student/fees/history" element={<PaymentDetails />} />
-
+                        <Route path="/Chatbot" element={<Chatbot />} />
 
                         {/* FeePayment */}
 

@@ -6,8 +6,13 @@ import HomeIcon from '@mui/icons-material/Home';
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import AnnouncementOutlinedIcon from '@mui/icons-material/AnnouncementOutlined';
+import { HiOutlineCurrencyRupee } from "react-icons/hi2";
+import { HiDocumentCurrencyRupee } from "react-icons/hi2";
 import ClassOutlinedIcon from '@mui/icons-material/ClassOutlined';
 import AssignmentIcon from '@mui/icons-material/Assignment';
+import { PiStudentBold } from "react-icons/pi";
+import { SiChatbot } from "react-icons/si";
+
 
 const StudentSideBar = () => {
     const location = useLocation();
@@ -28,7 +33,7 @@ const StudentSideBar = () => {
                 </ListItemButton>
                 <ListItemButton component={Link} to="/Student/attendance">
                     <ListItemIcon>
-                        <ClassOutlinedIcon color={location.pathname.startsWith("/Student/attendance") ? 'primary' : 'inherit'} />
+                        <PiStudentBold color={location.pathname.startsWith("/Student/attendance") ? 'primary' : 'inherit'} />
                     </ListItemIcon>
                     <ListItemText primary="Attendance" />
                 </ListItemButton>
@@ -40,16 +45,23 @@ const StudentSideBar = () => {
                 </ListItemButton>
                 <ListItemButton component={Link} to="/Student/feespay">
                     <ListItemIcon>
-                        <ClassOutlinedIcon color={location.pathname.startsWith("/Student/feespay") ? 'primary' : 'inherit'} />
+                        <HiOutlineCurrencyRupee color={location.pathname.startsWith("/Student/feespay") ? 'primary' : 'inherit'} />
                     </ListItemIcon>
                     <ListItemText primary="Feespay" />
                 </ListItemButton>
 
                 <ListItemButton component={Link} to="/Student/fees/history">
                     <ListItemIcon>
-                        <ClassOutlinedIcon color={location.pathname.startsWith("/Student/fees/history") ? 'primary' : 'inherit'} />
+                        <HiDocumentCurrencyRupee color={location.pathname.startsWith("/Student/fees/history") ? 'primary' : 'inherit'} />
                     </ListItemIcon>
                     <ListItemText primary="Payments History" />
+                </ListItemButton>
+
+                <ListItemButton component={Link} to="/Chatbot">
+                    <ListItemIcon>
+                        <SiChatbot color={location.pathname.startsWith("/Chatbot") ? 'primary' : 'inherit'} />
+                    </ListItemIcon>
+                    <ListItemText primary="Chatbot" />
                 </ListItemButton>
 
             </React.Fragment>

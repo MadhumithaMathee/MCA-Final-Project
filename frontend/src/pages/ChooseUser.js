@@ -80,6 +80,8 @@ const ChooseUser = ({ visitor }) => {
       setMessage("Network Error")
       setShowPopup(true)
     }
+    console.log("idle"); // line 82 in ChooseUser.js
+
   }, [status, currentRole, navigate, currentUser]);
 
   console.log(status);

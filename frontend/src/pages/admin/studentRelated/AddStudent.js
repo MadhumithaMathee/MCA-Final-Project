@@ -114,7 +114,7 @@ const AddStudent = ({ situation }) => {
                         </>
                     }
 
-                    <label>Name</label>
+                    <label>Email</label>
                     <input className="registerInput" type="text" placeholder="Enter student's email..."
                         value={email}
                         onChange={(event) => setemail(event.target.value)}

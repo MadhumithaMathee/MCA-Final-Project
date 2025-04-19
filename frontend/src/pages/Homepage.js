@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Grid, Box, Button } from '@mui/material';
 import styled from 'styled-components';
-import Students from "../assets/students.svg";
+import Students from "../assets/students1.jpg";
 import { LightPurpleButton } from '../components/buttonStyles';
 
 const Homepage = () => {
@@ -15,14 +15,12 @@ const Homepage = () => {
                 <Grid item xs={12} md={6}>
                     <StyledPaper elevation={3}>
                         <StyledTitle>
-                            Welcome to
+                            WELCOME TO SCHOOL MANAGEMENT
                             <br />
-                            School Management
-                            <br />
-                            System
+                            SYSTEM
                         </StyledTitle>
                         <StyledText>
-                            Streamline school management, class organization, and add students and faculty.
+                                Streamline school management, class organization, and add students and faculty.
                             Seamlessly track attendance, assess performance, and provide feedback.
                             Access records, view marks, and communicate effortlessly.
                         </StyledText>
@@ -92,6 +90,7 @@ const StyledText = styled.p`
   margin-bottom: 30px; 
   letter-spacing: normal;
   line-height: normal;
+  
 `;
 
 const StyledLink = styled(Link)`

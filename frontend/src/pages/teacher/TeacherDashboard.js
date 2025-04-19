@@ -23,6 +23,10 @@ import TeacherHomePage from './TeacherHomePage';
 import TeacherProfile from './TeacherProfile';
 import TeacherViewStudent from './TeacherViewStudent';
 import StudentExamMarks from '../admin/studentRelated/StudentExamMarks';
+import Chatbot from '../../components/chatbot/chat';
+import SalaryDashboard from './SalaryDashboard';
+
+
 
 const TeacherDashboard = () => {
     const [open, setOpen] = useState(true);
@@ -86,7 +90,9 @@ const TeacherDashboard = () => {
 
                         <Route path="/Teacher/class/student/attendance/:studentID/:subjectID" element={<StudentAttendance situation="Subject" />} />
                         <Route path="/Teacher/class/student/marks/:studentID/:subjectID" element={<StudentExamMarks situation="Subject" />} />
-
+                          {/* GetAllPaymentDetails */}
+                          <Route path="/Teacher/Salary" element={<SalaryDashboard/>} />
+                        <Route path="/Chatbot" element={<Chatbot/>} />
                         <Route path="/logout" element={<Logout />} />
                     </Routes>
                 </Box>

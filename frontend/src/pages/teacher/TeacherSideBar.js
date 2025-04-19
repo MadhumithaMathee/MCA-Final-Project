@@ -7,6 +7,8 @@ import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import AnnouncementOutlinedIcon from '@mui/icons-material/AnnouncementOutlined';
 import ClassOutlinedIcon from '@mui/icons-material/ClassOutlined';
+import { FaSackDollar } from "react-icons/fa6";
+import { SiChatbot } from "react-icons/si";
 import { useSelector } from 'react-redux';
 
 const TeacherSideBar = () => {
@@ -35,6 +37,19 @@ const TeacherSideBar = () => {
                     </ListItemIcon>
                     <ListItemText primary="Complain" />
                 </ListItemButton>
+                <ListItemButton component={Link} to="/Chatbot">
+                    <ListItemIcon>
+                        <SiChatbot color={location.pathname.startsWith("/Chatbot") ? 'primary' : 'inherit'} />
+                    </ListItemIcon>
+                    <ListItemText primary="Chatbot" />
+                </ListItemButton>
+                <ListItemButton component={Link} to="/Teacher/Salary">
+                    <ListItemIcon>
+                        <FaSackDollar color={location.pathname.startsWith("/Teacher/Salary") ? 'primary' : 'inherit'} />
+                    </ListItemIcon>
+                    <ListItemText primary="Salary" />
+                </ListItemButton>
+                
             </React.Fragment>
             <Divider sx={{ my: 1 }} />
             <React.Fragment>

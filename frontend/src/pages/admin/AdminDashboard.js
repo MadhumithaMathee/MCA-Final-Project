@@ -42,6 +42,7 @@ import ClassDetails from './classRelated/ClassDetails';
 import ShowClasses from './classRelated/ShowClasses';
 import AccountMenu from '../../components/AccountMenu';
 import GetAllPaymentDetails from './FeesRelated/getAllStudentsFeesDetatils';
+import Chatbot from '../../components/chatbot/chat';
 
 const AdminDashboard = () => {
     const [open, setOpen] = useState(false);
@@ -53,6 +54,7 @@ const AdminDashboard = () => {
         <>
             <Box sx={{ display: 'flex' }}>
                 <CssBaseline />
+
                 <AppBar open={open} position='absolute'>
                     <Toolbar sx={{ pr: '24px' }}>
                         <IconButton
@@ -137,7 +139,7 @@ const AdminDashboard = () => {
                         <Route path="/Admin/teachers/choosesubject/:id" element={<ChooseSubject situation="Norm" />} />
                         <Route path="/Admin/teachers/choosesubject/:classID/:teacherID" element={<ChooseSubject situation="Teacher" />} />
                         <Route path="/Admin/teachers/addteacher/:id" element={<AddTeacher />} />
-
+                        <Route path="/Chatbot"  element={<Chatbot/>} />
                         <Route path="/logout" element={<Logout />} />
                     </Routes>
                 </Box>
@@ -145,6 +147,8 @@ const AdminDashboard = () => {
         </>
     );
 }
+
+
 
 export default AdminDashboard
 
